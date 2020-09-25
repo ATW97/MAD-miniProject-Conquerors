@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.madmini.AddAppoinment;
 import com.example.madmini.ChangePassword;
 import com.example.madmini.Changeprofile;
 import com.example.madmini.CustomerView3;
@@ -35,6 +36,8 @@ public class HomeFragment extends Fragment {
 
 
         final Button btn2=root.findViewById(R.id.productStore);
+        final Button btn3=root.findViewById(R.id.appointmentAdd);
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +51,15 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(), CustomerView3.class));
             }
         });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), AddAppoinment.class));
+            }
+        });
+
+
 
 
         return root;

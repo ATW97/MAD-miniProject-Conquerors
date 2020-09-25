@@ -43,4 +43,35 @@
         <item>Other</item>
     </string-array>
 
+
+    <string name="invalid_name">Please Enter Your Name  !!!!!</string>
+    <string name="invalid_email">Please Enter Valid Email !!!!!!!</string>
+    <string name="invalid_message">Please Enter Your Message  !!!!!</string>
+    <string name="invalid_ownerName">Please Enter Owner Name !!!!</string>
+    <string name="invalid_petName">Please Enter ur Pet Name  !!!</string>
+    <string name="invalid_date">Please Enter Appointment Date !!!!</string>
+    <string name="invalid_NotificationTitle">Enter Ur Notification Title !!!!</string>
+
+    <string-array name="locations">
+        <item>--Choose--</item>
+        <item>Cat</item>
+        <item>Dog</item>
+        <item>Birds</item>
+        <item>Fish</item>
+    </string-array>
+
+    <string-array name="locationsSurgery">
+        <item>--Choose--</item>
+        <item>Sterilization</item>
+        <item>Pyometra</item>
+        <item>Dental</item>
+        <item>Orthopedic</item>
+        <item>Cataract</item>
+        <item>Cherry eye</item>
+        <item>Entropion</item>
+        <item>Ophthalic</item>
+        <item>Cardiology</item>
+    </string-array>
+
+
 </resources>
