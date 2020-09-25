@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.madmini.ChangePassword;
 import com.example.madmini.Changeprofile;
+import com.example.madmini.CustomerView3;
 import com.example.madmini.R;
 import com.example.madmini.ui.Login;
 
@@ -31,12 +32,23 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         final Button btn1=root.findViewById(R.id.changepro);
+
+
+        final Button btn2=root.findViewById(R.id.productStore);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), Changeprofile.class));
             }
         });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CustomerView3.class));
+            }
+        });
+
 
         return root;
 

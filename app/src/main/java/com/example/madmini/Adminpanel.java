@@ -12,11 +12,13 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Adminpanel extends AppCompatActivity {
     Button logout;
+
+    private Button category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminpanel);
-
+        category= findViewById(R.id.btn_category);
         logout=findViewById(R.id.btnadminpanel);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +26,16 @@ public class Adminpanel extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
+            }
+        });
+
+        category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Adminpanel.this,AdminPetCategory.class);
+                startActivity(intent);
+
             }
         });
     }

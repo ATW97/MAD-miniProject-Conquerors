@@ -77,8 +77,8 @@ public class Login extends AppCompatActivity {
         editor=sharedPreferences.edit();
         saveLogin=sharedPreferences.getBoolean("SaveLogin",true);
             if (saveLogin = true) {
-                //Email.setText(sharedPreferences.getString("Email", null));
-                //password.setText(sharedPreferences.getString("password", null));
+                Email.setText(sharedPreferences.getString("Email", null));
+                password.setText(sharedPreferences.getString("password", null));
             }
 
         //------------------------------------------------------------------------------------------------------------------------------------

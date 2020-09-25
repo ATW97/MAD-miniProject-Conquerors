@@ -34,4 +34,13 @@
     <string name="confirmpassword">ConfirmPassowrd</string>
     <string name="resetpassword">Reset Password</string>
 
+
+    <string-array name="locationsitem1">
+        <item>Choose</item>
+        <item>Food</item>
+        <item>Accessories</item>
+        <item>Toys</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>
