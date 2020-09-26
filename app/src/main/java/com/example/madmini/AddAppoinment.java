@@ -115,26 +115,19 @@ public class AddAppoinment extends AppCompatActivity implements DatePickerDialog
                 showDatePickerDialog();
             }
         });
-        //go to view button for card
+        //go to view button for card  list veiw button
 
         Go = findViewById(R.id.buttonGoVeiwCust);
         Go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              /*  Intent intent = new Intent(getApplicationContext(),AppListActivity.class);
-                startActivity(intent); */
+              Intent intent = new Intent(getApplicationContext(),AppListActivity.class);
+                startActivity(intent);
             }
         });
         //go to view of doctor
 
-        Doctor = findViewById(R.id.buttonDoctor);
-        Doctor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*Intent intent = new Intent(getApplicationContext(),AdminAPPOListActivity.class);
-                startActivity(intent);*/
-            }
-        });
+
         appoSave = findViewById(R.id.btnappoSave);
 
 
