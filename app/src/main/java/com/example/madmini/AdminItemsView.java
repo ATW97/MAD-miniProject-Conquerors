@@ -70,12 +70,24 @@ public class AdminItemsView extends AppCompatActivity {
         FirebaseRecyclerAdapter<Item, AdminViewHolder> adapter = new
                 FirebaseRecyclerAdapter<Item, AdminViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull AdminViewHolder adminViewHolder, int i, @NonNull Item item) {
+                    protected void onBindViewHolder(@NonNull AdminViewHolder adminViewHolder, final int i, @NonNull final Item item) {
                         adminViewHolder.textItemNameAdm.setText(item.getItemName());
                         adminViewHolder.txtitembrandAdm.setText(item.getBrand());
                         adminViewHolder.txtitemPriceAdm.setText("Rs " +item.getPrice());
                         adminViewHolder.txtItemDiscriptionAdm.setText(item.getDescription());
                         Picasso.get().load(item.getImage()).into(adminViewHolder.imageViewAdm);
+
+
+                        adminViewHolder.imageViewAdm.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AdminItemsView.this,AdminMaintainItem.class);
+                                intent.putExtra("pid",item.getPid());
+                                startActivity(intent);
+
+                            }
+                        });
+
                     }
 
                     @NonNull

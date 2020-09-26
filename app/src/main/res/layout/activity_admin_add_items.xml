@@ -14,7 +14,7 @@
         android:layout_width="189dp"
         android:layout_height="176dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:cropToPadding="false"
         android:padding="@android:dimen/app_icon_size"
         android:scaleType="centerCrop"
@@ -28,15 +28,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/select1_product_image"
-        android:inputType="textMultiLine"
-        android:layout_marginTop="20dp"
-        android:hint="      Product name"
-        android:padding="20dp"
         android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="45dp"
         android:background="@drawable/round_border"
+        android:hint="      Product name"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
 
-        />
+        android:textSize="16dp" />
 
     <Spinner
         android:id="@+id/spinnerType"
@@ -69,15 +69,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:inputType="textMultiLine"
-            android:layout_marginTop="6dp"
-            android:padding="20dp"
-            android:hint="      Price     "
             android:layout_marginLeft="45dp"
+            android:layout_marginTop="6dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/round_border"
+            android:hint="      Price     "
+            android:inputType="textMultiLine"
+            android:padding="20dp"
 
-            />
+            android:textSize="16dp" />
 
         <EditText
             android:id="@+id/product1_brand"
@@ -91,7 +91,7 @@
             android:inputType="textMultiLine"
             android:padding="20dp"
 
-            />
+            android:textSize="16dp" />
 
     </LinearLayout>
 
@@ -101,15 +101,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linear1"
-        android:inputType="textMultiLine"
-        android:layout_marginTop="6dp"
-        android:padding="20dp"
-        android:hint="      Discription"
         android:layout_marginLeft="45dp"
+        android:layout_marginTop="6dp"
         android:layout_marginRight="45dp"
         android:background="@drawable/round_border"
+        android:hint="      Discription"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
 
-        />
+        android:textSize="16dp" />
 
 
 
@@ -156,23 +156,24 @@
     </RadioGroup>
 
 
+
+
     <Button
-        android:id="@+id/add_new_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rdGrp1"
-        android:text="Add Product"
-        android:layout_marginLeft="45dp"
-        android:layout_marginRight="45dp"
-        android:padding="17dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/add_new_product"
+        android:text="Add Products"
+        android:textColor="@color/colorWhite"
+        android:textSize="18dp"
         android:textStyle="bold"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
         android:background="@drawable/round_bg"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginLeft="45dp"
+        android:padding="17dp"
+        android:layout_below="@id/rdGrp1"/>
 
-        />
+
 
 
 </RelativeLayout>
