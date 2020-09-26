@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+ Maleesha
+        <activity android:name=".AppListActivity"></activity>
+
         <activity android:name=".AdminItemsView"></activity>
+ master
         <activity android:name=".AdminUserProductActivity" />
         <activity android:name=".AdminNewOrderActivity" />
         <activity android:name=".ConfirmFinalOrderActivity" />
