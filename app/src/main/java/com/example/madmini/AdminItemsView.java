@@ -1,0 +1,89 @@
+package com.example.madmini;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.madmini.Model.Item;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
+
+import ViewHolder.AdminViewHolder;
+import ViewHolder.ItemViewHolder;
+
+public class AdminItemsView extends AppCompatActivity {
+
+    private DatabaseReference itemReff;
+    private RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    private AppBarConfiguration mAppBarConfiguration;
+
+    private FloatingActionButton searchbtnAdm;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_admin_items_view);
+
+        itemReff = FirebaseDatabase.getInstance().getReference().child("Items");
+
+        recyclerView = findViewById(R.id.recycler_menu_adm);
+        recyclerView.setHasFixedSize(true);
+        layoutManager= new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+
+        searchbtnAdm = findViewById(R.id.serch_adm);
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+
+
+        FirebaseRecyclerOptions<Item> options = new FirebaseRecyclerOptions.Builder<Item>().setQuery(itemReff, Item.class).build();
+
+        FirebaseRecyclerAdapter<Item, AdminViewHolder> adapter = new
+                FirebaseRecyclerAdapter<Item, AdminViewHolder>(options) {
+                    @Override
+                    protected void onBindViewHolder(@NonNull AdminViewHolder adminViewHolder, int i, @NonNull Item item) {
+                        adminViewHolder.textItemNameAdm.setText(item.getItemName());
+                        adminViewHolder.txtitembrandAdm.setText(item.getBrand());
+                        adminViewHolder.txtitemPriceAdm.setText("Rs " +item.getPrice());
+                        adminViewHolder.txtItemDiscriptionAdm.setText(item.getDescription());
+                        Picasso.get().load(item.getImage()).into(adminViewHolder.imageViewAdm);
+                    }
+
+                    @NonNull
+                    @Override
+                    public AdminViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.admin_item_layout, parent, false);
+                        AdminViewHolder viewHolder = new AdminViewHolder(view);
+                        return viewHolder;
+                    }
+                };
+
+
+
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
+
+
+
+    }
+}

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class AdminPetCategory extends AppCompatActivity {
@@ -13,6 +14,8 @@ public class AdminPetCategory extends AppCompatActivity {
 
     private ImageView dog, cat, bird;
     private ImageView fish, other;
+    private Button adminViewItwms;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,7 @@ public class AdminPetCategory extends AppCompatActivity {
         bird = (ImageView)findViewById(R.id.img_bird);
         fish =(ImageView)findViewById(R.id.img_fish);
         other = (ImageView)findViewById(R.id.img_other);
+        adminViewItwms =(Button)findViewById(R.id.btnAdminViewItemss);
 
 
 
@@ -73,6 +77,14 @@ public class AdminPetCategory extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(),AdminAddItems.class);
                 intent.putExtra("petCategory", "Other");
+                startActivity(intent);
+            }
+        });
+
+        adminViewItwms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),AdminItemsView.class);
                 startActivity(intent);
             }
         });
