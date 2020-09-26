@@ -64,6 +64,9 @@ public class CustomerView3 extends AppCompatActivity {
     }
 
     private void gotocart() {
+
+        Intent intent = new Intent(CustomerView3.this,CartActivity.class);
+        startActivity(intent);
     }
 
 
@@ -76,13 +79,24 @@ public class CustomerView3 extends AppCompatActivity {
         FirebaseRecyclerAdapter<Item, ItemViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Item, ItemViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int i, @NonNull Item item) {
+                    protected void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int i, @NonNull final Item item) {
 
                         itemViewHolder.textItemName.setText(item.getItemName());
                         itemViewHolder.txtitembrand.setText(item.getBrand());
                         itemViewHolder.txtitemPrice.setText("Rs " +item.getPrice());
                         itemViewHolder.txtItemDiscription.setText(item.getDescription());
                         Picasso.get().load(item.getImage()).into(itemViewHolder.imageView);
+
+                        itemViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(CustomerView3.this,ProductDeatilsActivity.class);
+                                // get prodcut id using product model object
+                               intent.putExtra("pid",item.getPid());
+                                startActivity(intent);
+
+                            }
+                        });
 
                     }
 

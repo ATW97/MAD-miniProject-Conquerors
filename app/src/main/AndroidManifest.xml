@@ -9,9 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddAppoinment"
+        <activity android:name=".AdminUserProductActivity"></activity>
+        <activity android:name=".AdminNewOrderActivity" />
+        <activity android:name=".ConfirmFinalOrderActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".ProductDeatilsActivity" />
+        <activity
+            android:name=".AddAppoinment"
             android:parentActivityName=".MainActivity" />
-
         <activity android:name=".CustomerView3" />
         <activity android:name=".AdminPetCategory" />
         <activity android:name=".AdminAddItems" />

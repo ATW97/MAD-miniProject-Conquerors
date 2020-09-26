@@ -14,11 +14,14 @@ public class Adminpanel extends AppCompatActivity {
     Button logout;
 
     private Button category;
+
+    private Button checkOrdersbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminpanel);
         category= findViewById(R.id.btn_category);
+        checkOrdersbtn = findViewById(R.id.btnShowOrders);
         logout=findViewById(R.id.btnadminpanel);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +39,14 @@ public class Adminpanel extends AppCompatActivity {
                 Intent intent = new Intent(Adminpanel.this,AdminPetCategory.class);
                 startActivity(intent);
 
+            }
+        });
+
+        checkOrdersbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Adminpanel.this, AdminNewOrderActivity.class);
+                startActivity(intent);
             }
         });
     }
