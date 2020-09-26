@@ -19,6 +19,7 @@
         <activity
             android:name=".AddAppoinment"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".AppoDetailsActivity" />
         <activity android:name=".CustomerView3" />
         <activity android:name=".AdminPetCategory" />
         <activity android:name=".AdminAddItems" />

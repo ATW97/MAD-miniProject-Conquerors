@@ -45,14 +45,14 @@ public class RecyclerView_Config {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                  /*  Intent intent= new Intent(mContext, AppoDetailsActivity.class);
+                    Intent intent= new Intent(mContext, AppoDetailsActivity.class);
                     intent.putExtra("key",key);
                     intent.putExtra("ownerName",OwnerName.getText().toString());
                     intent.putExtra("petName",PetName.getText().toString());
                     intent.putExtra("Date",Date.getText().toString());
                     intent.putExtra("Type",Type.getText().toString());
                     //intent.putExtra("Breed",)
-                    mContext.startActivity(intent);   */
+                    mContext.startActivity(intent);
                 }
             });
 
