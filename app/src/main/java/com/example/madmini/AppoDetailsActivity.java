@@ -258,8 +258,8 @@ public class AppoDetailsActivity extends AppCompatActivity implements AdapterVie
         Feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(getApplicationContext(),UserFeedBackTstActivity.class);
-               // startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(),UserFeedBackTstActivity.class);
+               startActivity(intent);
             }
         });
 
