@@ -36,7 +36,7 @@ public class CustomerView3 extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     private AppBarConfiguration mAppBarConfiguration;
     
-    private  FloatingActionButton catrBtn;
+    private  FloatingActionButton catrBtn,search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +52,20 @@ public class CustomerView3 extends AppCompatActivity {
 
 
         catrBtn = findViewById(R.id.fab11);
+        search = findViewById(R.id.search_cus);
         
         catrBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 gotocart();
+            }
+        });
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CustomerView3.this,SearchActivity.class);
+                startActivity(intent);
+
             }
         });
 

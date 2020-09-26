@@ -34,7 +34,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fa2"
+        android:id="@+id/search_cus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|right"
@@ -45,7 +45,7 @@
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.029"
         app:srcCompat="@drawable/icons8_search_48px" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +46,14 @@ public class AdminItemsView extends AppCompatActivity {
 
 
         searchbtnAdm = findViewById(R.id.serch_adm);
+
+        searchbtnAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
