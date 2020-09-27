@@ -9,14 +9,21 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.madmini.Model.Rating;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 
 public class RatingActivity extends AppCompatActivity {
@@ -30,7 +37,10 @@ public class RatingActivity extends AppCompatActivity {
     float totalPercentage;
     Rating rating;
     EditText eTxtName;
-    String UserName;
+    String UserName,userId;
+    FirebaseAuth FAuth;
+    FirebaseFirestore FStore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +52,22 @@ public class RatingActivity extends AppCompatActivity {
         rating1.setMax(5);
         rating1.setRating((float) 3.5);
 
-
+        FAuth = FirebaseAuth.getInstance();
+        FStore = FirebaseFirestore.getInstance();
 
         btnSubmit=(Button)findViewById(R.id.btn_submit);
         btnView=(Button)findViewById(R.id.btn_view);
 
+        userId = FAuth.getCurrentUser().getUid();
 
+
+        final DocumentReference documentReference =FStore.collection("Users").document(userId);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                eTxtName.setText(value.getString("Email"));
+            }
+        });
         rating = new Rating();
 
         reff = FirebaseDatabase.getInstance().getReference().child("Ratings");
