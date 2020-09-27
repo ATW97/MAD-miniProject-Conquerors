@@ -8,14 +8,14 @@
 
     <Spinner
         android:id="@+id/spinnerType"
-        android:layout_width="195dp"
-        android:layout_height="32dp"
+        android:layout_width="206dp"
+        android:layout_height="41dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintHorizontal_bias="0.99"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintVertical_bias="0.412" />
 
     <TextView
         android:id="@+id/txtType"
@@ -23,12 +23,13 @@
         android:layout_height="wrap_content"
         android:text="Type"
         android:textSize="18sp"
+        android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.414" />
 
     <TextView
         android:id="@+id/txtOwnerName"
@@ -37,13 +38,13 @@
         android:text="Owner Name"
         android:textColor="#121111"
         android:textSize="18sp"
-        android:textStyle="normal|bold"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.209" />
 
     <EditText
         android:id="@+id/editPetName"
@@ -53,10 +54,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.995"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
+        app:layout_constraintVertical_bias="0.302" />
 
     <TextView
         android:id="@+id/txtpetName"
@@ -67,10 +68,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
+        app:layout_constraintVertical_bias="0.308" />
 
     <EditText
         android:id="@+id/editOwnerName"
@@ -80,10 +81,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:id="@+id/txtDate"
@@ -91,74 +92,85 @@
         android:layout_height="wrap_content"
         android:text="Date"
         android:textSize="18sp"
+        android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.54" />
 
     <Button
         android:id="@+id/btnDeleteDoctor"
-        android:layout_width="314dp"
-        android:layout_height="44dp"
+        android:layout_width="277dp"
+        android:layout_height="46dp"
+        android:background="@drawable/round_bg"
+        android:textColor="#FFF7F7"
+        android:textSize="18dp"
+        android:textStyle="bold"
         android:text="DELETE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintVertical_bias="0.892" />
 
     <TextView
         android:id="@+id/txtAppointment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Appointment"
-        android:textSize="24sp"
+        android:layout_width="305dp"
+        android:layout_height="58dp"
+        android:text="Doctor Confirmation"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.077" />
 
     <Button
         android:id="@+id/btnDatefix"
-        android:layout_width="48dp"
-        android:layout_height="46dp"
+        android:layout_width="34dp"
+        android:layout_height="32dp"
+        android:background="#47799F"
         android:text="+"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
+        app:layout_constraintVertical_bias="0.535" />
 
     <EditText
         android:id="@+id/editTextDateMain"
-        android:layout_width="168dp"
+        android:layout_width="209dp"
         android:layout_height="52dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="0.99"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.535" />
 
     <Button
         android:id="@+id/buttonConfirm"
-        android:layout_width="315dp"
-        android:layout_height="47dp"
+        android:layout_width="277dp"
+        android:layout_height="46dp"
+        android:background="@drawable/round_bg"
+        android:textColor="#FFF7F7"
+        android:textSize="18dp"
+        android:textStyle="bold"
         android:text="Confirm Appointment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
+        app:layout_constraintVertical_bias="0.751" />
 </androidx.constraintlayout.widget.ConstraintLayout>
