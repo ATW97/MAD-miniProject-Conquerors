@@ -19,6 +19,7 @@ import com.example.madmini.ChangePassword;
 import com.example.madmini.Changeprofile;
 import com.example.madmini.CustomerView3;
 import com.example.madmini.R;
+import com.example.madmini.RatingActivity;
 import com.example.madmini.ui.Login;
 
 public class HomeFragment extends Fragment {
@@ -37,6 +38,7 @@ public class HomeFragment extends Fragment {
 
         final Button btn2=root.findViewById(R.id.productStore);
         final Button btn3=root.findViewById(R.id.appointmentAdd);
+        final Button btn4 = root.findViewById(R.id.rating1);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +61,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               startActivity(new Intent(getActivity(), RatingActivity.class));
+            }
+        });
 
 
 

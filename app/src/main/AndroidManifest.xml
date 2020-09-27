@@ -26,13 +26,6 @@
         <activity android:name=".CustomerView3" />
         <activity android:name=".AdminPetCategory" />
         <activity android:name=".AdminAddItems" />
-        <activity android:name=".WelcomeScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".ForgotPassword"
             android:parentActivityName=".ui.Login" />
@@ -64,6 +57,8 @@
 
         <activity android:name=".AppoDoctorDetailsActivity" />
         <activity android:name=".AdminAPPOListActivity" />
+      <activity android:name=".RatingActivity"/>
+        <activity android:name=".RatingList"/>
     </application>
 
 </manifest>

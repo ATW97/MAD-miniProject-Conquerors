@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RatingActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/bangers"
+        android:text="Hi.. Rate for us"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40dp"
+        android:id="@+id/text1"/>
+
+    <EditText
+        android:id="@+id/edUserName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="75dp"
+        android:textStyle="bold"
+        android:hint="User Name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:layout_below="@+id/text1"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edUserName"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+
+
+        android:foregroundGravity="center"
+        android:rating="3"
+        android:stepSize="0.5" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="30dp"
+        android:text="Submit"
+
+        android:textSize="24dp"
+        android:layout_below="@id/ratingBar"/>
+
+    <Button
+        android:id="@+id/btn_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="30dp"
+        android:text="VIEW"
+
+        android:textSize="24dp"
+        android:layout_below="@id/btn_submit"/>
+
+
+
+
+</RelativeLayout>
