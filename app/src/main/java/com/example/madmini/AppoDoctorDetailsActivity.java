@@ -1,6 +1,7 @@
 package com.example.madmini;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -96,14 +97,14 @@ public class AppoDoctorDetailsActivity extends AppCompatActivity implements Adap
 
         //confirm and go notification
 
-      /*  mConfirm_btn = findViewById(R.id.buttonConfirm);
+        mConfirm_btn = findViewById(R.id.buttonConfirm);
         mConfirm_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),NptificaSendingActivity.class);
                 startActivity(intent);
             }
-        });  */
+        });
 
 
         mDelete_btn.setOnClickListener(new View.OnClickListener() {

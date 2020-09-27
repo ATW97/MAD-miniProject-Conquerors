@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".NptificaSendingActivity">
+
+
+
+    <EditText
+        android:id="@+id/edit_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Notification Title" />
+
+    <EditText
+        android:id="@+id/edit_text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Ur Message" />
+
+    <Button
+        android:layout_width="277dp"
+        android:layout_height="46dp"
+        android:background="@drawable/round_bg"
+        android:textColor="#FFF7F7"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:onClick="sendOnChannel1"
+        android:text="Send on Channel 1" />
+
+    <Button
+        android:layout_width="277dp"
+        android:layout_height="46dp"
+        android:background="@drawable/round_bg"
+        android:onClick="sendOnChannel2"
+        android:text="Send on Channel 2"
+        android:textColor="#FFF7F7"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
