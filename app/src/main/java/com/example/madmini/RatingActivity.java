@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,7 +37,7 @@ public class RatingActivity extends AppCompatActivity {
     long maxid = 0;
     float totalPercentage;
     Rating rating;
-    EditText eTxtName;
+    TextView eTxtName;
     String UserName,userId;
     FirebaseAuth FAuth;
     FirebaseFirestore FStore;
@@ -48,7 +49,7 @@ public class RatingActivity extends AppCompatActivity {
 
         rating1 = (RatingBar)findViewById(R.id.ratingBar);
 
-        eTxtName = (EditText)findViewById(R.id.edUserName) ;
+        eTxtName = (TextView) findViewById(R.id.edUserName) ;
         rating1.setMax(5);
         rating1.setRating((float) 3.5);
 
@@ -109,10 +110,10 @@ public class RatingActivity extends AppCompatActivity {
                         rating.setRatedvalue(RatedValue);
 
 
-                        //set ID
+
                         reff.child(String.valueOf(maxid+1)).setValue(rating);
 
-                        //reff.push().setValue(appoinment);
+
                         Toast.makeText(RatingActivity.this,"Insert successfuly!!",Toast.LENGTH_LONG).show();
 
 
