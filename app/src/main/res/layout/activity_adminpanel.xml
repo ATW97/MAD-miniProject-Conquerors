@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.524" />
 
     <Button
-        android:id="@+id/showAppointments"
+        android:id="@+id/appointmentsShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View Appoinments"

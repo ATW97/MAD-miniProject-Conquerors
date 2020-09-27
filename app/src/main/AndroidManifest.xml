@@ -59,6 +59,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".AppoDoctorDetailsActivity" />
+        <activity android:name=".AdminAPPOListActivity" />
     </application>
 
 </manifest>

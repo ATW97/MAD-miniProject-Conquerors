@@ -15,13 +15,14 @@ public class Adminpanel extends AppCompatActivity {
 
     private Button category;
 
-    private Button checkOrdersbtn;
+    private Button checkOrdersbtn,appoinments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminpanel);
         category= findViewById(R.id.btn_category);
         checkOrdersbtn = findViewById(R.id.btnShowOrders);
+        appoinments = findViewById(R.id.appointmentsShow);
         logout=findViewById(R.id.btnadminpanel);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,5 +50,13 @@ public class Adminpanel extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+      appoinments.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent intent = new Intent(Adminpanel.this,AdminAPPOListActivity.class);
+              startActivity(intent);
+          }
+      });
     }
 }
