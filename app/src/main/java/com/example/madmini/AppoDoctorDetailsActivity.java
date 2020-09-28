@@ -33,6 +33,8 @@ public class AppoDoctorDetailsActivity extends AppCompatActivity implements Adap
 
     private String key;
 
+    private  String Dateq;
+
     private String pet;
     private String owner;
     private String breed;
@@ -49,6 +51,8 @@ public class AppoDoctorDetailsActivity extends AppCompatActivity implements Adap
         owner=getIntent().getStringExtra("ownerName"); //000000000000000000000000000000000000000
         pet=getIntent().getStringExtra("petName");
         breed=getIntent().getStringExtra("Breed");
+        //
+        Dateq=getIntent().getStringExtra("Date");
       //  diseases=getIntent().getStringExtra("Diseases");
        // vaccine=getIntent().getStringExtra("Vaccine");
 
@@ -144,7 +148,7 @@ public class AppoDoctorDetailsActivity extends AppCompatActivity implements Adap
 
         //spinner type
         spinner = findViewById(R.id.spinnerType);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations22, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -163,6 +167,7 @@ public class AppoDoctorDetailsActivity extends AppCompatActivity implements Adap
 
         petName = findViewById(R.id.editPetName);
         petName.setText(pet);
+
         //  Type = findViewById(R.id.spinnerType);
      //   Breed = findViewById(R.id.editBreed);
       //  Breed.setText(breed);
@@ -173,6 +178,8 @@ public class AppoDoctorDetailsActivity extends AppCompatActivity implements Adap
         //Vaccine.setText(vaccine);
         // Surgery = findViewById(R.id.spinnerSurgery);
         dateText = findViewById(R.id.editTextDateMain);
+        //
+        dateText.setText(Dateq);
         findViewById(R.id.btnDatefix).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

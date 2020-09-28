@@ -37,7 +37,7 @@ public class AppoDetailsActivity extends AppCompatActivity implements AdapterVie
     private Button mDelete_btn;
     //  private Button mBack_btn;
 
-
+    private  String Dateq;
     private Button Feedback;
     private  Button Update;
 
@@ -65,7 +65,11 @@ public class AppoDetailsActivity extends AppCompatActivity implements AdapterVie
         key = getIntent().getStringExtra("key");
         owner=getIntent().getStringExtra("ownerName"); //000000000000000000000000000000000000000
         pet=getIntent().getStringExtra("petName");
-      //  breed=getIntent().getStringExtra("Breed");
+
+        Dateq=getIntent().getStringExtra("Date");
+
+
+        //  breed=getIntent().getStringExtra("Breed");
       //  diseases=getIntent().getStringExtra("Diseases");
        // vaccine=getIntent().getStringExtra("Vaccine");
 
@@ -209,7 +213,7 @@ public class AppoDetailsActivity extends AppCompatActivity implements AdapterVie
 
         //spinner type
         spinner = findViewById(R.id.spinnerType);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations22, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -238,6 +242,9 @@ public class AppoDetailsActivity extends AppCompatActivity implements AdapterVie
       //  Vaccine.setText(vaccine);
         // Surgery = findViewById(R.id.spinnerSurgery);
         dateText = findViewById(R.id.editTextDateMain);
+
+        dateText.setText(Dateq);
+
 
 
 

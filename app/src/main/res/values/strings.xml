@@ -60,6 +60,13 @@
         <item>Fish</item>
     </string-array>
 
+    <string-array name="locations22">
+        <item>Cat</item>
+        <item>Dog</item>
+        <item>Birds</item>
+        <item>Fish</item>
+    </string-array>
+
     <string-array name="locationsSurgery">
         <item>--Choose--</item>
         <item>Sterilization</item>
