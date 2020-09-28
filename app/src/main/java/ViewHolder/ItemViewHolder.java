@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.madmini.R;
 
 public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    public TextView textItemName,txtItemDiscription,txtitemPrice,txtitembrand;
+    public TextView textItemName,txtItemDiscription,txtitemPrice,txtitembrand,txtStatus;
     public ImageView imageView;
    // public ItemClickListner itemlistner;
 
@@ -22,6 +22,7 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         txtItemDiscription =(TextView) itemView.findViewById(R.id.item_description);
         txtitemPrice =(TextView) itemView.findViewById(R.id.item_price);
         txtitembrand =(TextView) itemView.findViewById(R.id.item_brand);
+        txtStatus =(TextView) itemView.findViewById(R.id.item_status);
     }
 
 

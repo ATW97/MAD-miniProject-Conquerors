@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -35,6 +36,7 @@ public class CustomerView3 extends AppCompatActivity {
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private AppBarConfiguration mAppBarConfiguration;
+    private String stts ="";
     
     private  FloatingActionButton catrBtn,search;
 
@@ -95,17 +97,30 @@ public class CustomerView3 extends AppCompatActivity {
                         itemViewHolder.txtitemPrice.setText("Rs " +item.getPrice());
                         itemViewHolder.txtItemDiscription.setText(item.getDescription());
                         Picasso.get().load(item.getImage()).into(itemViewHolder.imageView);
+                        stts = item.getStatus();
+                        if(stts.equals("Not-Available")){
+                        itemViewHolder.txtStatus.setText(stts);
+                            itemViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Toast.makeText(CustomerView3.this, "Sorry...Product is not available!!!!", Toast.LENGTH_SHORT).show();
 
-                        itemViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Intent intent= new Intent(CustomerView3.this,ProductDeatilsActivity.class);
-                                // get prodcut id using product model object
-                               intent.putExtra("pid",item.getPid());
-                                startActivity(intent);
 
-                            }
-                        });
+                                }
+                            });}
+
+                        else {
+                            itemViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(CustomerView3.this, ProductDeatilsActivity.class);
+                                    // get prodcut id using product model object
+                                    intent.putExtra("pid", item.getPid());
+                                    startActivity(intent);
+
+                                }
+                            });
+                        }
 
                     }
 

@@ -29,6 +29,7 @@ public class AdminItemsView extends AppCompatActivity {
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private AppBarConfiguration mAppBarConfiguration;
+    private String stts ="";
 
     private FloatingActionButton searchbtnAdm;
 
@@ -76,6 +77,9 @@ public class AdminItemsView extends AppCompatActivity {
                         adminViewHolder.txtitemPriceAdm.setText("Rs " +item.getPrice());
                         adminViewHolder.txtItemDiscriptionAdm.setText(item.getDescription());
                         Picasso.get().load(item.getImage()).into(adminViewHolder.imageViewAdm);
+                        stts = item.getStatus();
+                        if(stts.equals("Not-Available")){
+                        adminViewHolder.txtStatusAdm.setText(stts);}
 
 
                         adminViewHolder.imageViewAdm.setOnClickListener(new View.OnClickListener() {
