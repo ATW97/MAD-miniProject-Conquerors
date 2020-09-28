@@ -128,7 +128,7 @@ public class AddAppoinment extends AppCompatActivity implements DatePickerDialog
         //go to view of doctor
 
 
-        appoSave = findViewById(R.id.btnappoSave);
+        appoSave = findViewById(R.id.btnSaveAppp);
 
 
         appoinment = new Appoinment();
