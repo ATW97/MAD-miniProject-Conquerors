@@ -1,10 +1,12 @@
 package com.example.madmini;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,13 +24,16 @@ import ViewHolder.AdminOrdersViewHolder;
 public class AdminNewOrderActivity extends AppCompatActivity {
 
     private RecyclerView ordersList;
-    private DatabaseReference ordersRef;
+    private DatabaseReference ordersRef,cartlistadmin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_new_order);
 
         ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders");
+        cartlistadmin=FirebaseDatabase.getInstance().getReference().child("Cart List").child("Cartlist Admin View");
+
+
         ordersList= findViewById(R.id.orders_list);
         ordersList.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -61,6 +66,36 @@ public class AdminNewOrderActivity extends AppCompatActivity {
                 });
 
 
+                adminOrdersViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        CharSequence options[]= new CharSequence[]
+                                {
+                                        "Yes",
+                                        "No"
+                                };
+
+                        AlertDialog.Builder builder= new AlertDialog.Builder(AdminNewOrderActivity.this);
+                        builder.setTitle("Have you delivered this order prooducts ?");
+                        builder.setItems(options, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                    if(i ==0)
+                                    {
+                                        String UID=getRef(i).getKey();
+
+                                        RemoveOrder(UID);
+                                    }
+                                    else
+                                    {
+                                        finish();
+                                    }
+                            }
+                        });
+                       builder.show();
+                    }
+                });
+
 
             }
 
@@ -75,5 +110,12 @@ public class AdminNewOrderActivity extends AppCompatActivity {
 
         ordersList.setAdapter(adapter);
         adapter.startListening();
+    }
+
+    private void RemoveOrder(String uid) {
+        ordersRef.child(uid).removeValue();
+        cartlistadmin.child(uid).removeValue();
+
+
     }
 }

@@ -48,7 +48,7 @@
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/round_bg11">
 
         <TextView
             android:id="@+id/texttital"

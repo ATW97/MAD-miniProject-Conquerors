@@ -46,7 +46,7 @@ public class Adminpanel extends AppCompatActivity {
         checkOrdersbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Adminpanel.this, AdminNewOrderActivity.class);
+                Intent intent = new Intent(Adminpanel.this, maintainOrders.class);
                 startActivity(intent);
             }
         });
