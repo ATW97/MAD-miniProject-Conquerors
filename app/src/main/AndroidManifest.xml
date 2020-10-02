@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".maintainOrders"></activity>
+        <activity android:name=".AdminUserList"></activity>
+        <activity android:name=".maintainOrders" />
         <activity android:name=".AppListActivity" />
         <activity android:name=".AdminItemsView" />
         <activity android:name=".AdminUserProductActivity" />

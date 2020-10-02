@@ -11,19 +11,22 @@ import com.example.madmini.ui.Login;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Adminpanel extends AppCompatActivity {
-    Button logout;
+    private Button logout;
 
-    private Button category;
+    private Button category,AllUsersList;
 
     private Button checkOrdersbtn,appoinments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminpanel);
+
         category= findViewById(R.id.btn_category);
         checkOrdersbtn = findViewById(R.id.btnShowOrders);
         appoinments = findViewById(R.id.appointmentsShow);
+        AllUsersList = findViewById(R.id.AllUserlist);
         logout=findViewById(R.id.btnadminpanel);
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,5 +61,12 @@ public class Adminpanel extends AppCompatActivity {
               startActivity(intent);
           }
       });
+        AllUsersList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Adminpanel.this,AdminUserList.class);
+                startActivity(intent);
+            }
+        });
     }
 }
