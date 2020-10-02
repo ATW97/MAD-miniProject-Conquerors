@@ -152,7 +152,7 @@ public class Login extends AppCompatActivity {
                                     editor.commit();
                                 Toast.makeText(Login.this, "Save Email and password", Toast.LENGTH_SHORT).show();
                             }else {
-                                Toast.makeText(Login.this, "Remember Not Save Email and password", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(Login.this, "Remember Not Save Email and password", Toast.LENGTH_SHORT).show();
                             }
                             //---------------------------------------------------------------------------------------------------------------------
                         }

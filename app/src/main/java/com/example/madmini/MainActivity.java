@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.madmini.ui.Login;
@@ -16,8 +17,15 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -30,7 +38,12 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    TextView email,firsName,lastName;
+    View view;
+    FirebaseAuth FAuth;
+    FirebaseFirestore FStore;
+    FirebaseUser user;
+    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +59,18 @@ public class MainActivity extends AppCompatActivity {
         //                .setAction("Action", null).show();
       //      }
      //   });
+        FAuth = FirebaseAuth.getInstance();
+        FStore = FirebaseFirestore.getInstance();
+        user = FAuth.getCurrentUser();
+        userId = FAuth.getCurrentUser().getUid();
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        view=navigationView.getHeaderView(0);
+
+        email=view.findViewById(R.id.txtEmailNavi);
+        firsName=view.findViewById(R.id.txtfirstnamenavi);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -58,6 +81,17 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        final DocumentReference documentReference = FStore.collection("Users").document(userId);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                firsName.setText(value.getString("FirstName")+" "+value.getString("LastName"));
+               // lastName.setText(value.getString("LastName"));
+                email.setText(value.getString("Email"));
+
+
+            }
+        });
 
 
         /* navigationView1.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

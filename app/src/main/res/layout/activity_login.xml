@@ -45,8 +45,8 @@
 
     <EditText
         android:id="@+id/loginemail"
-        android:layout_width="393dp"
-        android:layout_height="57dp"
+        android:layout_width="373dp"
+        android:layout_height="60dp"
         android:layout_margin="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -61,15 +61,15 @@
         android:textColorHint="#AFA4A4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintVertical_bias="0.397" />
 
     <EditText
         android:id="@+id/loginpassword"
-        android:layout_width="396dp"
-        android:layout_height="55dp"
+        android:layout_width="368dp"
+        android:layout_height="56dp"
         android:layout_margin="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -87,7 +87,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551"
+        app:layout_constraintVertical_bias="0.548"
         app:passwordToggleEnabled="true" />
 
     <CheckBox
