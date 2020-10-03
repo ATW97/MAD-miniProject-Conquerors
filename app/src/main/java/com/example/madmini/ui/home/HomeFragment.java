@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.madmini.AddAppoinment;
+import com.example.madmini.CartActivity;
 import com.example.madmini.ChangePassword;
 import com.example.madmini.Changeprofile;
 import com.example.madmini.Cus1PetCategorySelect;
@@ -22,6 +24,7 @@ import com.example.madmini.CustomerView3;
 import com.example.madmini.R;
 import com.example.madmini.RatingActivity;
 import com.example.madmini.ui.Login;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomeFragment extends Fragment {
 
@@ -34,12 +37,13 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final Button btn1=root.findViewById(R.id.changepro);
+        final ImageView btn1=root.findViewById(R.id.changepro);
 
 
-        final Button btn2=root.findViewById(R.id.productStore);
-        final Button btn3=root.findViewById(R.id.appointmentAdd);
-        final Button btn4 = root.findViewById(R.id.rating1);
+        final ImageView btn2=root.findViewById(R.id.productStore);
+        final ImageView btn3=root.findViewById(R.id.appointmentAdd);
+        final ImageView btn4 = root.findViewById(R.id.rating1);
+       final FloatingActionButton catrBtn = root.findViewById(R.id.cart4);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +70,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                startActivity(new Intent(getActivity(), RatingActivity.class));
+            }
+        });
+
+        catrBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CartActivity.class));
             }
         });
 
