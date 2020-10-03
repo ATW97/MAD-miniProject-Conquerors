@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,10 +26,14 @@ public class AdminNewOrderActivity extends AppCompatActivity {
 
     private RecyclerView ordersList;
     private DatabaseReference ordersRef,cartlistadmin;
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_new_order);
+
+        getSupportActionBar().setTitle(" ");
+          getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders");
         cartlistadmin=FirebaseDatabase.getInstance().getReference().child("Cart List").child("Cartlist Admin View");

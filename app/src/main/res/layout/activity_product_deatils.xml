@@ -68,13 +68,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView24"
-        android:text="Product Details"
-        android:textColor="#E91E63"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:gravity="center"
         android:layout_marginTop="10dp"
-        />
+        android:gravity="center"
+        android:text="@string/lbl_Product_Details"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -141,16 +140,17 @@
 
 
 </RelativeLayout>
+
     <Button
         android:id="@+id/pd_add_to_cart_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_bg"
-        android:layout_marginTop="30dp"
         android:layout_below="@+id/number_btn"
-        android:text="Add to cart"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="25dp"
+        android:background="@drawable/round_bg"
+        android:text="@string/btn_Add_to_cart"
         android:textColor="@android:color/white"
         android:textSize="18sp"
 

@@ -58,88 +58,82 @@
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_below="@+id/txtconferm"
-        android:hint="       Your Name"
-        android:background="@drawable/round_border"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
-        />
+        android:background="@drawable/round_border"
+        android:hint="@string/Deliver_name" />
 
     <EditText
         android:id="@+id/delivery_phone_num"
         android:layout_width="369dp"
         android:layout_height="50dp"
-        android:background="@drawable/round_border"
-
         android:layout_below="@+id/delivery_name"
-        android:hint="       Your Phone Number"
-        android:inputType="number"
-        android:layout_marginTop="5dp"
+
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
-        />
+        android:background="@drawable/round_border"
+        android:hint="@string/Delivery_phone"
+        android:inputType="number" />
 
 
     <EditText
         android:id="@+id/delivery_Address"
         android:layout_width="369dp"
         android:layout_height="50dp"
-        android:background="@drawable/round_border"
         android:layout_below="@+id/delivery_phone_num"
-        android:hint="       Your Address"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
-        />
+        android:background="@drawable/round_border"
+        android:hint="@string/delivary_address" />
 
     <EditText
         android:id="@+id/delivery_province"
         android:layout_width="369dp"
         android:layout_height="50dp"
-        android:background="@drawable/round_border"
         android:layout_below="@+id/delivery_Address"
-        android:hint="       Province"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
-        />
+        android:background="@drawable/round_border"
+        android:hint="@string/deli_Province" />
 
     <EditText
         android:id="@+id/delivery_District"
         android:layout_width="369dp"
         android:layout_height="50dp"
-        android:background="@drawable/round_border"
         android:layout_below="@+id/delivery_province"
-        android:hint="       District"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
-        />
+        android:background="@drawable/round_border"
+        android:hint="@string/Deli_District" />
 
 
     <EditText
         android:id="@+id/delivery_City"
         android:layout_width="369dp"
         android:layout_height="50dp"
-        android:background="@drawable/round_border"
         android:layout_below="@+id/delivery_District"
-        android:hint="       City"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
-        />
+        android:background="@drawable/round_border"
+        android:hint="@string/Deli_City" />
 
     <Button
         android:id="@+id/conferm_final_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/delivery_City"
-        android:layout_marginTop="50dp"
-
-        android:background="@drawable/round_bg"
-        android:text="Buy Now"
-        android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
+
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/round_bg"
+        android:text="@string/btn_Buy_Now"
         android:textColor="@android:color/white"
         android:textSize="15dp" />
 

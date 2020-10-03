@@ -79,6 +79,36 @@
         <item>Ophthalic</item>
         <item>Cardiology</item>
     </string-array>
+    <string name="Deliver_name">Your Name</string>
+    <string name="Delivery_phone">Your Phone Number</string>
+    <string name="delivary_address">Your Address</string>
+    <string name="deli_Province">Province</string>
+    <string name="Deli_District">District</string>
+    <string name="Deli_City">City</string>
+    <string name="btn_Buy_Now">Buy Now</string>
+    <string name="show_order_products">show this order products</string>
+    <string name="Date_Time">Date Time</string>
+    <string name="Address_City">Address,City</string>
+    <string name="Total_price">Total price</string>
+    <string name="User_Name">UserName</string>
+    <string name="Phone_number">Phone number</string>
+    <string name="Product_Name">Product Name</string>
+    <string name="Product_Quantity">Product Quantity</string>
+    <string name="Product_Price">Product Price</string>
+    <string name="btn_Add_to_cart">Add to cart</string>
+    <string name="lbl_Product_Details">Product Details</string>
+    <string name="btn_cart_Next">Next</string>
+    <string name="New_Orders">New Orders</string>
+
+
+
+    <string name="emmpty_name">Please provide your full name</string>
+    <string name="emmpty_phone">Please provide your phone number</string>
+    <string name="emmpty_Address">Please provide your Address</string>
+    <string name="emmpty_province">Please provide your province</string>
+    <string name="emmpty_district">Please provide your district</string>
+
+    <string name="emmpty_city">Please provide your city</string>
 
 
 </resources>

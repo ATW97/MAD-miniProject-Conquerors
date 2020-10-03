@@ -11,16 +11,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AdminUserList"></activity>
-        <activity android:name=".maintainOrders" />
+
+        <activity android:name=".maintainOrders"
+            android:parentActivityName=".Adminpanel" />
+
         <activity android:name=".AppListActivity" />
         <activity android:name=".AdminItemsView"
             android:parentActivityName=".Adminpanel"/>
-        <activity android:name=".AdminUserProductActivity" />
+
+        <activity android:name=".AdminUserProductActivity"
+            android:parentActivityName=".Adminpanel"
+            />
         <activity android:name=".NptificaSendingActivity" />
-        <activity android:name=".AdminNewOrderActivity" />
-        <activity android:name=".ConfirmFinalOrderActivity" />
-        <activity android:name=".CartActivity" />
-        <activity android:name=".ProductDeatilsActivity" />
+        <activity android:name=".AdminNewOrderActivity"
+            android:parentActivityName=".Adminpanel"
+            />
+        <activity android:name=".ConfirmFinalOrderActivity"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity android:name=".CartActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <activity android:name=".ProductDeatilsActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AddAppoinment"
             android:parentActivityName=".MainActivity" />

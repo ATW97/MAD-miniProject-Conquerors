@@ -54,11 +54,11 @@
             android:id="@+id/texttital"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Orders"
+            android:layout_marginTop="10dp"
+            android:text="@string/New_Orders"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="25dp"
-            android:layout_marginTop="10dp"
 
             />
 

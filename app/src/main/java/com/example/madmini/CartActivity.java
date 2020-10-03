@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,12 +45,14 @@ public class CartActivity extends AppCompatActivity {
     private FirebaseAuth FAuth;
     private FirebaseFirestore FStore;
     private String userId;
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-
+        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         recyclerView= findViewById(R.id.cart_list);
         recyclerView.setHasFixedSize(true);
@@ -140,7 +143,7 @@ public class CartActivity extends AppCompatActivity {
                                             if(task.isSuccessful())
                                             {
                                                 Toast.makeText(CartActivity.this,"Item Deleted successfully.",Toast.LENGTH_SHORT).show();
-                                                Intent intent= new Intent(CartActivity.this,CustomerView3.class);
+                                                Intent intent= new Intent(CartActivity.this,Cus1PetCategorySelect.class);
                                                 startActivity(intent);
 
                                             }

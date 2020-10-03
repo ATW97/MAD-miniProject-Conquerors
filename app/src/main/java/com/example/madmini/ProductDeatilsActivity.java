@@ -3,6 +3,7 @@ package com.example.madmini;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -47,11 +48,13 @@ public class ProductDeatilsActivity extends AppCompatActivity {
 
     private String statedel="Normal";
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_deatils);
-
+        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
 
         //Firebase needs------------------------------------------------------------------------------------------------------------
@@ -147,15 +150,15 @@ public class ProductDeatilsActivity extends AppCompatActivity {
                                             {
 
                                                 Toast.makeText(ProductDeatilsActivity.this, "Product is added to cart", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(ProductDeatilsActivity.this,CustomerView3.class);
+                                                Intent intent = new Intent(ProductDeatilsActivity.this,Cus1PetCategorySelect.class);
                                                 startActivity(intent);
                                             }
                                         }
                                     });
-                            Intent intent = new Intent(ProductDeatilsActivity.this,CustomerView3.class);
-                            startActivity(intent);
+                          //  Intent intent = new Intent(ProductDeatilsActivity.this,Cus1PetCategorySelect.class);
+                           /// startActivity(intent);
 
-                            Toast.makeText(ProductDeatilsActivity.this, "Product is added to cart", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(ProductDeatilsActivity.this, "Product is added to cart", Toast.LENGTH_SHORT).show();
 
                         } else {
 
@@ -182,7 +185,7 @@ public class ProductDeatilsActivity extends AppCompatActivity {
 
                     Item item  =snapshot.getValue(Item.class);
 
-                    productName.setText(item.getBrand());
+                    productName.setText(item.getItemName());
                     prodcutprice.setText(item.getPrice());
                     productDescription.setText(item.getDescription());
 
