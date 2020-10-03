@@ -60,6 +60,7 @@
         <activity android:name=".AdminAPPOListActivity" />
         <activity android:name=".RatingActivity" />
         <activity android:name=".RatingList" />
+        <activity android:name=".Cus1PetCategorySelect"/>
     </application>
 
 </manifest>

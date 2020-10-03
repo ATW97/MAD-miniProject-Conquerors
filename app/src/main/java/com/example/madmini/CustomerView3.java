@@ -37,6 +37,7 @@ public class CustomerView3 extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     private AppBarConfiguration mAppBarConfiguration;
     private String stts ="";
+    private String PetCategoryName;
     
     private  FloatingActionButton catrBtn,search;
 
@@ -45,6 +46,7 @@ public class CustomerView3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_view3);
 
+        PetCategoryName = getIntent().getExtras().get("petCategory").toString();
         itemReff = FirebaseDatabase.getInstance().getReference().child("Items");
 
         recyclerView = findViewById(R.id.recycler_menu);
@@ -85,8 +87,12 @@ public class CustomerView3 extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerOptions<Item> options =
-                new FirebaseRecyclerOptions.Builder<Item>().setQuery(itemReff,Item.class).build();
+        FirebaseRecyclerOptions<Item> options = new FirebaseRecyclerOptions.Builder<Item>()
+                .setQuery(itemReff.orderByChild("petCategory").equalTo(PetCategoryName),Item.class).build();
+
+
+        // FirebaseRecyclerOptions<Item> options =
+                //new FirebaseRecyclerOptions.Builder<Item>().setQuery(itemReff,Item.class).build();
         FirebaseRecyclerAdapter<Item, ItemViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Item, ItemViewHolder>(options) {
                     @Override

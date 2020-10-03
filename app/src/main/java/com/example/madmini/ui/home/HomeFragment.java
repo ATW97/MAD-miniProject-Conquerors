@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.madmini.AddAppoinment;
 import com.example.madmini.ChangePassword;
 import com.example.madmini.Changeprofile;
+import com.example.madmini.Cus1PetCategorySelect;
 import com.example.madmini.CustomerView3;
 import com.example.madmini.R;
 import com.example.madmini.RatingActivity;
@@ -50,7 +51,7 @@ public class HomeFragment extends Fragment {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), CustomerView3.class));
+                startActivity(new Intent(getActivity(), Cus1PetCategorySelect.class));
             }
         });
 
