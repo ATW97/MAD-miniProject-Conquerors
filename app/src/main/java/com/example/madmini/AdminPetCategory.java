@@ -2,6 +2,7 @@ package com.example.madmini;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,11 +17,14 @@ public class AdminPetCategory extends AppCompatActivity {
     private ImageView fish, other;
     private Button adminViewItwms;
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_pet_category);
 
+        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         dog = (ImageView)findViewById(R.id.img_dog);
         cat =(ImageView)findViewById(R.id.img_cat);

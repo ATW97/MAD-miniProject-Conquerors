@@ -1,5 +1,6 @@
 package com.example.madmini;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -42,10 +43,14 @@ public class RatingActivity extends AppCompatActivity {
     FirebaseAuth FAuth;
     FirebaseFirestore FStore;
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating);
+
+        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         rating1 = (RatingBar)findViewById(R.id.ratingBar);
 
@@ -57,7 +62,7 @@ public class RatingActivity extends AppCompatActivity {
         FStore = FirebaseFirestore.getInstance();
 
         btnSubmit=(Button)findViewById(R.id.btn_submit);
-        btnView=(Button)findViewById(R.id.btn_view);
+
 
         userId = FAuth.getCurrentUser().getUid();
 
@@ -117,17 +122,11 @@ public class RatingActivity extends AppCompatActivity {
                         Toast.makeText(RatingActivity.this,"Insert successfuly!!",Toast.LENGTH_LONG).show();
 
 
+                        rating1.setIsIndicator(true);
 
                     }
                 });
 
-        btnView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RatingList.class);
-                startActivity(intent);
-            }
-        });
 
 
 

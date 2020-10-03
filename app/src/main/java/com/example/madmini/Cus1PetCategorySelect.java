@@ -1,5 +1,6 @@
 package com.example.madmini;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,10 +13,14 @@ public class Cus1PetCategorySelect extends AppCompatActivity {
     private Button dog, cat, bird;
     private Button fish, other;
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cus1_pet_category_select);
+
+        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         dog = (Button)findViewById(R.id.btnDog);
         cat =(Button)findViewById(R.id.btnCat);

@@ -81,20 +81,6 @@
         android:background="@drawable/round_bg"
         android:layout_below="@id/ratingBar"/>
 
-    <Button
-        android:id="@+id/btn_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="View Ratings"
-        android:textSize="22dp"
-        android:textColor="@color/colorWhite"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="45dp"
-        android:layout_marginLeft="45dp"
-        android:background="@drawable/round_bg"
-        android:layout_below="@id/btn_submit"/>
-
     </RelativeLayout>
 
     <ImageView

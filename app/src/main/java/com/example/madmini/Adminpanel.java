@@ -15,7 +15,7 @@ public class Adminpanel extends AppCompatActivity {
 
     private Button category,AllUsersList;
 
-    private Button checkOrdersbtn,appoinments;
+    private Button checkOrdersbtn,appoinments,btnView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,8 @@ public class Adminpanel extends AppCompatActivity {
         checkOrdersbtn = findViewById(R.id.btnShowOrders);
         appoinments = findViewById(R.id.appointmentsShow);
         AllUsersList = findViewById(R.id.AllUserlist);
+        btnView=(Button)findViewById(R.id.btn_view);
+
         logout=findViewById(R.id.btnadminpanel);
 
         logout.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +67,14 @@ public class Adminpanel extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Adminpanel.this,AdminUserList.class);
+                startActivity(intent);
+            }
+        });
+
+        btnView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RatingList.class);
                 startActivity(intent);
             }
         });
