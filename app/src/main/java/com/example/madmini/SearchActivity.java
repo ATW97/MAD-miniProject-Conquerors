@@ -1,5 +1,6 @@
 package com.example.madmini;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,10 +29,13 @@ public class SearchActivity extends AppCompatActivity {
    private EditText inputProductName;
    private RecyclerView searchList;
    private String searchInput;
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         inputProductName = (EditText)findViewById(R.id.search_product_name);
         search_btn = (Button)findViewById(R.id.search_btn);

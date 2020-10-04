@@ -1,5 +1,6 @@
 package com.example.madmini;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,10 +31,13 @@ public class AdminMaintainItem extends AppCompatActivity {
     private String productID = "";
     private DatabaseReference itemRef;
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_maintain_item);
+        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         productID = getIntent().getStringExtra("pid");
 

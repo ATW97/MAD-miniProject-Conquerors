@@ -47,11 +47,12 @@ public class CustomerView3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_view3);
+        PetCategoryName = getIntent().getExtras().get("petCategory").toString();
 
-        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setTitle("For your "+PetCategoryName);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
-        PetCategoryName = getIntent().getExtras().get("petCategory").toString();
+
         itemReff = FirebaseDatabase.getInstance().getReference().child("Items");
 
         recyclerView = findViewById(R.id.recycler_menu);

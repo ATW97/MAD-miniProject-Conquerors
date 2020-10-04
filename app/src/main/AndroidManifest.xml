@@ -44,7 +44,8 @@
             android:parentActivityName=".Cus1PetCategorySelect"/>
         <activity android:name=".AdminPetCategory"
             android:parentActivityName=".Adminpanel"/>
-        <activity android:name=".AdminAddItems" />
+        <activity android:name=".AdminAddItems"
+            android:parentActivityName=".AdminPetCategory"/>
         <activity
             android:name=".ForgotPassword"
             android:parentActivityName=".ui.Login" />
@@ -64,8 +65,10 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".AdminMaintainItem" />
+        <activity android:name=".SearchActivity"
+            android:parentActivityName=".Cus1PetCategorySelect"/>
+        <activity android:name=".AdminMaintainItem"
+            android:parentActivityName=".AdminPetCategory"/>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -77,7 +80,8 @@
         <activity android:name=".AdminAPPOListActivity" />
         <activity android:name=".RatingActivity"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".RatingList" />
+        <activity android:name=".RatingList"
+            android:parentActivityName=".Adminpanel"/>
         <activity android:name=".Cus1PetCategorySelect"
             android:parentActivityName=".MainActivity"/>
     </application>

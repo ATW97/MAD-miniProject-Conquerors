@@ -1,5 +1,6 @@
 package com.example.madmini;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,10 +16,13 @@ import ViewHolder.Rating_RecycleView_Config;
 public class RatingList extends AppCompatActivity {
 
     private RecyclerView sRecyclerView;
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating_list);
+        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
 
         sRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView_rating);

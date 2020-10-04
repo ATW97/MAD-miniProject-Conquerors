@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -54,13 +55,19 @@ public class AdminAddItems extends AppCompatActivity implements  AdapterView.OnI
     private StorageReference productImagesRef;
     private DatabaseReference productsRef;
     private ProgressDialog loadingBar;
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_items);
 
-
         PetCategoryName = getIntent().getExtras().get("petCategory").toString();
+
+        getSupportActionBar().setTitle("For "+PetCategoryName);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+
+
+
         productImagesRef = FirebaseStorage.getInstance().getReference().child("Item Images");
         productsRef = FirebaseDatabase.getInstance().getReference().child("Items");
 
