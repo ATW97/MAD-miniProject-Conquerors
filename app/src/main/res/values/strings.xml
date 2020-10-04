@@ -121,6 +121,15 @@
     <string name="ProductDiscription">Product Discription</string>
     <string name="delete">Delete</string>
     <string name="update">Update</string>
+    <string name="OwnerName">Owner Name</string>
+    <string name="PetName">Pet Name</string>
+    <string name="Type">Type</string>
+    <string name="Breed">Breed</string>
+    <string name="Date">Date</string>
+    <string name="Diseases">Diseases</string>
+    <string name="Vaccine">Vaccine</string>
+    <string name="Surgery">Surgery</string>
+    <string name="FEEDBACK">FEEDBACK</string>
 
 
 </resources>
