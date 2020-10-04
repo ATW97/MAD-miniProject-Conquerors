@@ -109,6 +109,18 @@
     <string name="emmpty_district">Please provide your district</string>
 
     <string name="emmpty_city">Please provide your city</string>
+    <string name="addProducts">Add Products</string>
+    <string name="Productname">"      Product name"</string>
+    <string name="price">"      Price     "</string>
+    <string name="brand">"    Brand    "</string>
+    <string name="discription">"      Discription"</string>
+    <string name="available">Available</string>
+    <string name="notAvailable">Not-Available</string>
+    <string name="ProductBrand">Product Brand</string>
+    <string name="Productprice">Product price</string>
+    <string name="ProductDiscription">Product Discription</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
 
 
 </resources>

@@ -57,7 +57,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="45dp"
         android:background="@drawable/round_border"
-        android:hint="      Product name"
+        android:hint="@string/Productname"
         android:inputType="textMultiLine"
         android:padding="14dp"
         android:textSize="14dp" />
@@ -99,7 +99,7 @@
             android:layout_marginTop="6dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/round_border"
-            android:hint="      Price     "
+            android:hint="@string/price"
             android:inputType="number"
             android:padding="14dp"
 
@@ -113,7 +113,7 @@
             android:layout_marginTop="6dp"
             android:layout_marginRight="45dp"
             android:background="@drawable/round_border"
-            android:hint="    Brand    "
+            android:hint="@string/brand"
             android:inputType="textMultiLine"
             android:padding="14dp"
 
@@ -131,7 +131,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginRight="45dp"
         android:background="@drawable/round_border"
-        android:hint="      Discription"
+        android:hint="@string/discription"
         android:inputType="textMultiLine"
         android:padding="14dp"
 
@@ -164,47 +164,44 @@
             android:id="@+id/rdBtnAvailable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Available"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/available"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.716"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="10dp"/>
+            app:layout_constraintVertical_bias="0.716" />
 
         <RadioButton
             android:id="@+id/rdBtnNotAvailable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Not-Available"
+            android:text="@string/notAvailable"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.878"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.716"
-            />
+            app:layout_constraintVertical_bias="0.716" />
 
     </RadioGroup>
 
 
-
-
     <Button
+        android:id="@+id/add_new_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/add_new_product"
-        android:text="Add Products"
-        android:textColor="@color/colorWhite"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:background="@drawable/round_bg"
+        android:layout_below="@id/rdGrp1"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="45dp"
-        android:layout_marginLeft="45dp"
+        android:background="@drawable/round_bg"
         android:padding="15dp"
-        android:layout_below="@id/rdGrp1"/>
+        android:text="@string/addProducts"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>
