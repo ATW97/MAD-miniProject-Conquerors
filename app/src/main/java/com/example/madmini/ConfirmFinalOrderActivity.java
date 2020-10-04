@@ -37,6 +37,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
     private FirebaseAuth FAuth;
     private FirebaseFirestore FStore;
     private String userId;
+    boolean valid = true;
     AwesomeValidation awesomeValidation;
 
     @SuppressLint("RestrictedApi")
@@ -72,44 +73,111 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
         confermOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Checkempty();
+                checkField(nameEditText);
+                checkField(phoneEditText);
+                checkField(addressEditText);
+                checkField(provinceEditText);
+                checkField(DistrictEditText);
+                checkField(CityEditText);
 
+                ConfirmOrder();
+                
             }
         });
     }
 
-    private void Checkempty() {
+    public boolean checkField(EditText textFiled) {
+
+        if (textFiled == nameEditText) {
+            String val = nameEditText.getText().toString();
+            if (val.isEmpty()) {
+                nameEditText.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                nameEditText.setError(null);
+                valid = true;
+            }
+            return valid;
 
 
-        if (TextUtils.isEmpty(nameEditText.getText().toString())) {
-            Toast.makeText(this,"Please provide your full name",Toast.LENGTH_SHORT).show();
 
-           // awesomeValidation.addValidation(this, R.id.delivery_name,
-                   // RegexTemplate.NOT_EMPTY, R.string.emmpty_name);
-
-        } else if (TextUtils.isEmpty(phoneEditText.getText().toString())) {
-            Toast.makeText(this,"Please provide your phone number",Toast.LENGTH_SHORT).show();
-            //awesomeValidation.addValidation(this, R.id.delivery_phone_num,
-                   // RegexTemplate.NOT_EMPTY, R.string.emmpty_phone);
-        } else if (TextUtils.isEmpty(addressEditText.getText().toString())) {
-            Toast.makeText(this,"Please provide your address",Toast.LENGTH_SHORT).show();
-            //awesomeValidation.addValidation(this, R.id.delivery_Address,
-                  //  RegexTemplate.NOT_EMPTY, R.string.emmpty_Address);
-        } else if (TextUtils.isEmpty(provinceEditText.getText().toString())) {
-            Toast.makeText(this,"Please provide your province",Toast.LENGTH_SHORT).show();
-           // awesomeValidation.addValidation(this, R.id.delivery_province,
-                   // RegexTemplate.NOT_EMPTY, R.string.emmpty_province);
-        } else if (TextUtils.isEmpty(DistrictEditText.getText().toString())) {
-            Toast.makeText(this,"Please provide your district",Toast.LENGTH_SHORT).show();
-           // awesomeValidation.addValidation(this, R.id.delivery_District,
-                 //   RegexTemplate.NOT_EMPTY, R.string.emmpty_district);
-        } else if (TextUtils.isEmpty(CityEditText.getText().toString())) {
-            Toast.makeText(this,"Please provide your city",Toast.LENGTH_SHORT).show();
-         //   awesomeValidation.addValidation(this, R.id.delivery_City,
-                  //  RegexTemplate.NOT_EMPTY, R.string.emmpty_city);
-        } else {
-            ConfirmOrder();
         }
+
+        if(textFiled == phoneEditText)
+        {
+            String val = phoneEditText.getText().toString();
+
+            if (val.isEmpty()) {
+                phoneEditText.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                phoneEditText.setError(null);
+                valid = true;
+            }
+            return valid;
+
+        }
+        if(textFiled == addressEditText)
+        {
+            String val = addressEditText.getText().toString();
+
+            if (val.isEmpty()) {
+                addressEditText.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                addressEditText.setError(null);
+                valid = true;
+            }
+            return valid;
+
+        }
+
+        if(textFiled == provinceEditText)
+        {
+            String val = provinceEditText.getText().toString();
+
+            if (val.isEmpty()) {
+                provinceEditText.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                provinceEditText.setError(null);
+                valid = true;
+            }
+            return valid;
+
+        }
+
+        if(textFiled == DistrictEditText)
+        {
+            String val = DistrictEditText.getText().toString();
+
+            if (val.isEmpty()) {
+                DistrictEditText.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                DistrictEditText.setError(null);
+                valid = true;
+            }
+            return valid;
+
+        }
+
+        if(textFiled == CityEditText)
+        {
+            String val = CityEditText.getText().toString();
+
+            if (val.isEmpty()) {
+                CityEditText.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                CityEditText.setError(null);
+                valid = true;
+            }
+            return valid;
+
+        }
+
+        return valid;
     }
 
 
