@@ -3,10 +3,12 @@ package com.example.madmini;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,6 +32,7 @@ public class AdminMaintainItem extends AppCompatActivity {
     private ImageView imge1;
     private String productID = "";
     private DatabaseReference itemRef;
+    private RadioButton availbl,notAvail;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -50,6 +53,8 @@ public class AdminMaintainItem extends AppCompatActivity {
         description = (EditText)findViewById(R.id.item_description_m);
         imge1 = (ImageView)findViewById(R.id.item_image_m);
         deleteButton = (Button)findViewById(R.id.delete_button_I);
+        availbl = (RadioButton)findViewById(R.id.rdBtnAvailable_m);
+        notAvail = (RadioButton)findViewById(R.id.rdBtnNotAvailable_m);
 
 
         displayItemInfo();
@@ -91,6 +96,18 @@ public class AdminMaintainItem extends AppCompatActivity {
         String Ibrand =brand.getText().toString();
         String Iprice =price.getText().toString();
         String Idescription =description.getText().toString();
+        String R1 = availbl.getText().toString();
+        String R2 = notAvail.getText().toString();
+        String status;
+
+        if(availbl.isChecked()){
+            status = R1;
+        }
+        else
+        {
+            status = R2;
+        }
+
 
         if(Iname.equals(""))
         {
@@ -107,10 +124,13 @@ public class AdminMaintainItem extends AppCompatActivity {
             Toast.makeText(this, "Please Write product price", Toast.LENGTH_SHORT).show();
 
         }
-       else if(Idescription.equals(""))
+        else if(Idescription.equals(""))
         {
             Toast.makeText(this, "Please Write product description", Toast.LENGTH_SHORT).show();
 
+        }
+        else if (TextUtils.isEmpty(status)) {
+            Toast.makeText(this, "Please Select availble or not", Toast.LENGTH_SHORT).show();
         }
         else{
 
@@ -120,12 +140,13 @@ public class AdminMaintainItem extends AppCompatActivity {
             itemMap.put("price", Iprice);
             itemMap.put("ItemName", Iname);
             itemMap.put("Brand" , Ibrand);
+            itemMap.put("status" , status);
             itemRef.updateChildren(itemMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful())
                     {
-                      Toast.makeText(AdminMaintainItem.this,"Updated successfully",Toast.LENGTH_LONG).show();
+                        Toast.makeText(AdminMaintainItem.this,"Updated successfully",Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(AdminMaintainItem.this, AdminItemsView.class);
 
                         startActivity(intent);
@@ -151,7 +172,16 @@ public class AdminMaintainItem extends AppCompatActivity {
                     String Iprice = dataSnapshot.child("price").getValue().toString();
                     String Idescription = dataSnapshot.child("description").getValue().toString();
                     String Iimage = dataSnapshot.child("image").getValue().toString();
+                    String ssts = dataSnapshot.child("status").getValue().toString();
 
+                    if(ssts.equals("Available"))
+                    {
+                        availbl.toggle();
+                    }
+                    else
+                    {
+                        notAvail.toggle();
+                    }
                     name.setText(Iname);
                     brand.setText(Ibrand);
                     price.setText(Iprice);

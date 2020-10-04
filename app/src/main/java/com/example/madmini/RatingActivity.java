@@ -103,7 +103,7 @@ public class RatingActivity extends AppCompatActivity {
 
                 RatedValue = rating1.getRating();
 
-                totalPercentage = RatedValue/totalRating;
+                totalPercentage = (RatedValue/totalRating)*100;
 
 
                 Toast.makeText(RatingActivity.this, "Your rating is"+RatedValue+"/"+totalRating,Toast.LENGTH_LONG).show();

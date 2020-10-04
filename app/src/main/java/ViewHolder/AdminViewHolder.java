@@ -11,7 +11,7 @@ import com.example.madmini.Interface.ItemClickListner;
 import com.example.madmini.R;
 
 public class AdminViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    public TextView textItemNameAdm,txtItemDiscriptionAdm,txtitemPriceAdm,txtitembrandAdm,txtStatusAdm;
+    public TextView textItemNameAdm,txtItemDiscriptionAdm,txtitemPriceAdm,txtitembrandAdm,txtStatusAdm,txtPetTypeAdm,txtItetypeAdm;
     public ImageView imageViewAdm;
     //public ItemClickListner itemlistner;
 
@@ -24,6 +24,8 @@ public class AdminViewHolder extends RecyclerView.ViewHolder implements View.OnC
         txtitemPriceAdm =(TextView) itemView.findViewById(R.id.item_price_adm);
         txtitembrandAdm =(TextView) itemView.findViewById(R.id.item_brand_adm);
         txtStatusAdm =(TextView) itemView.findViewById(R.id.item_status_adm);
+        txtPetTypeAdm =(TextView) itemView.findViewById(R.id.item_pet_adm);
+        txtItetypeAdm =(TextView) itemView.findViewById(R.id.item_itemT_adm);
     }
 
     @Override

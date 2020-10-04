@@ -56,7 +56,7 @@ public class Rating_RecycleView_Config {
             float str=rating.getPrecentage();
 
             //num.setText(String.valueOf(returnnum));
-            percentage.setText(String.valueOf(str));
+            percentage.setText(String.valueOf(str)+"%");
 
 
 

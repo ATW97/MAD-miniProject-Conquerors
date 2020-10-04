@@ -4,8 +4,8 @@ public class Item {
 
     private String pid;
     private String ItemName;
-    private String PetTyppe;
-    private String Type;
+    private String petCategory;
+    private String ItemType;
     private String Brand;
     private  String Price;
     private String status;
@@ -20,11 +20,12 @@ public class Item {
     public Item() {
     }
 
-    public Item(String pid, String itemName, String petTyppe, String type, String brand, String price, String status, String description, String date, String time, String image) {
+
+    public Item(String pid, String itemName, String petCategory, String itemType, String brand, String price, String status, String description, String date, String time, String image) {
         this.pid = pid;
         ItemName = itemName;
-        PetTyppe = petTyppe;
-        Type = type;
+        this.petCategory = petCategory;
+        ItemType = itemType;
         Brand = brand;
         Price = price;
         this.status = status;
@@ -33,7 +34,6 @@ public class Item {
         Time = time;
         Image = image;
     }
-
 
     public String getPid() {
         return pid;
@@ -51,20 +51,21 @@ public class Item {
         ItemName = itemName;
     }
 
-    public String getPetTyppe() {
-        return PetTyppe;
+
+    public String getPetCategory() {
+        return petCategory;
     }
 
-    public void setPetTyppe(String petTyppe) {
-        PetTyppe = petTyppe;
+    public void setPetCategory(String petCategory) {
+        this.petCategory = petCategory;
     }
 
-    public String getType() {
-        return Type;
+    public String getItemType() {
+        return ItemType;
     }
 
-    public void setType(String type) {
-        Type = type;
+    public void setItemType(String itemType) {
+        ItemType = itemType;
     }
 
     public String getBrand() {

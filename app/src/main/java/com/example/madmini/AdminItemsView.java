@@ -81,10 +81,12 @@ public class AdminItemsView extends AppCompatActivity {
                         adminViewHolder.txtitembrandAdm.setText(item.getBrand());
                         adminViewHolder.txtitemPriceAdm.setText("Rs " +item.getPrice());
                         adminViewHolder.txtItemDiscriptionAdm.setText(item.getDescription());
+                        adminViewHolder.txtPetTypeAdm.setText(item.getPetCategory());
+                        adminViewHolder.txtItetypeAdm.setText(item.getItemType());
                         Picasso.get().load(item.getImage()).into(adminViewHolder.imageViewAdm);
                         stts = item.getStatus();
                         if(stts.equals("Not-Available")){
-                        adminViewHolder.txtStatusAdm.setText(stts);}
+                            adminViewHolder.txtStatusAdm.setText(stts);}
 
 
                         adminViewHolder.imageViewAdm.setOnClickListener(new View.OnClickListener() {
