@@ -87,6 +87,11 @@ public class AdminItemsView extends AppCompatActivity {
                         stts = item.getStatus();
                         if(stts.equals("Not-Available")){
                             adminViewHolder.txtStatusAdm.setText(stts);}
+                        else
+                        {
+                            adminViewHolder.txtStatusAdm.setText(" ");
+
+                        }
 
 
                         adminViewHolder.imageViewAdm.setOnClickListener(new View.OnClickListener() {

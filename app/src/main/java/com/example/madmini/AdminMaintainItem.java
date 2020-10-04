@@ -33,6 +33,7 @@ public class AdminMaintainItem extends AppCompatActivity {
     private String productID = "";
     private DatabaseReference itemRef;
     private RadioButton availbl,notAvail;
+    boolean valid = true;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -63,6 +64,11 @@ public class AdminMaintainItem extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 applyChanges();
+                checkField(name);
+                checkField(brand);
+                checkField(price);
+                checkField(description);
+
             }
         });
 
@@ -197,5 +203,50 @@ public class AdminMaintainItem extends AppCompatActivity {
 
             }
         });
+    }
+    public boolean checkField(EditText textFiled) {
+
+        if (textFiled == name) {
+            String val = name.getText().toString();
+            if (val.isEmpty()) {
+                name.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                name.setError(null);
+                valid = true;
+            }
+            return valid;
+        } else if (textFiled == brand) {
+            String val = brand.getText().toString();
+            if (val.isEmpty()) {
+                brand.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                brand.setError(null);
+                valid = true;
+            }
+            return valid;
+        }else if (textFiled == price) {
+            String val = price.getText().toString();
+            if (val.isEmpty()) {
+                price.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                price.setError(null);
+                valid = true;
+            }
+            return valid;
+        }else if (textFiled == description) {
+            String val = description.getText().toString();
+            if (val.isEmpty()) {
+                description.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                description.setError(null);
+                valid = true;
+            }
+            return valid;
+        }
+        return valid;
     }
 }

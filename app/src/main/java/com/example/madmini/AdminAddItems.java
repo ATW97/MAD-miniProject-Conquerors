@@ -47,6 +47,7 @@ public class AdminAddItems extends AppCompatActivity implements  AdapterView.OnI
     private Spinner ItemTypeSpinner;
     private String ItemCategoryName;
     ImageView InputProductImage;
+    boolean valid = true;
     // private static final int GalleryPick=1;
 
     public Uri ImageUri;
@@ -102,6 +103,12 @@ public class AdminAddItems extends AppCompatActivity implements  AdapterView.OnI
             @Override
             public void onClick(View view) {
                 ValidateProductData();
+                checkField(InputProductName);
+                checkField(InputProductDisctription);
+                checkField(InputProductPrice);
+                checkField(InputBrand);
+
+
             }
         });
 
@@ -162,14 +169,15 @@ public class AdminAddItems extends AppCompatActivity implements  AdapterView.OnI
         } else if (TextUtils.isEmpty(Pname)) {
             Toast.makeText(this, "Please Write product name", Toast.LENGTH_SHORT).show();
         }
-        else if (TextUtils.isEmpty(ItemType)) {
-            Toast.makeText(this, "Please Select product type", Toast.LENGTH_SHORT).show();
+        else if (TextUtils.isEmpty(ItemType)||ItemType.equals("Choose")) {
+            Toast.makeText(this, "Please Select product type. Choose not a type", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(status)) {
             Toast.makeText(this, "Please Select availble or not", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(Brand)) {
             Toast.makeText(this, "Please Write brand", Toast.LENGTH_SHORT).show();
+
         }
 
         else {
@@ -287,5 +295,50 @@ public class AdminAddItems extends AppCompatActivity implements  AdapterView.OnI
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+    public boolean checkField(EditText textFiled) {
+
+        if (textFiled == InputProductName) {
+            String val = InputProductName.getText().toString();
+            if (val.isEmpty()) {
+                InputProductName.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                InputProductName.setError(null);
+                valid = true;
+            }
+            return valid;
+        } else if (textFiled == InputProductPrice) {
+            String val = InputProductPrice.getText().toString();
+            if (val.isEmpty()) {
+                InputProductPrice.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                InputProductPrice.setError(null);
+                valid = true;
+            }
+            return valid;
+        }else if (textFiled == InputProductDisctription) {
+            String val = InputProductDisctription.getText().toString();
+            if (val.isEmpty()) {
+                InputProductDisctription.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                InputProductDisctription.setError(null);
+                valid = true;
+            }
+            return valid;
+        }else if (textFiled == InputBrand) {
+            String val = InputBrand.getText().toString();
+            if (val.isEmpty()) {
+                InputBrand.setError("Field cannot be empty");
+                valid = false;
+            } else {
+                InputBrand.setError(null);
+                valid = true;
+            }
+            return valid;
+        }
+        return valid;
     }
 }

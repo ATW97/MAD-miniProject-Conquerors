@@ -100,7 +100,7 @@
             android:layout_marginRight="5dp"
             android:background="@drawable/round_border"
             android:hint="      Price     "
-            android:inputType="textMultiLine"
+            android:inputType="number"
             android:padding="14dp"
 
             android:textSize="14dp" />
