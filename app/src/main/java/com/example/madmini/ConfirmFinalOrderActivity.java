@@ -48,7 +48,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(" ");
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
-       // awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        // awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         confermOrderBtn = (Button) findViewById(R.id.conferm_final_btn);
 
         nameEditText = (EditText) findViewById(R.id.delivery_name);
@@ -81,7 +81,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
                 checkField(CityEditText);
 
                 ConfirmOrder();
-                
+
             }
         });
     }
@@ -100,12 +100,11 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
             return valid;
 
 
-
         }
 
-        if(textFiled == phoneEditText)
-        {
+        if (textFiled == phoneEditText) {
             String val = phoneEditText.getText().toString();
+            String MobilePattern = "[0-9]{10}";
 
             if (val.isEmpty()) {
                 phoneEditText.setError("Field cannot be empty");
@@ -117,8 +116,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
             return valid;
 
         }
-        if(textFiled == addressEditText)
-        {
+        if (textFiled == addressEditText) {
             String val = addressEditText.getText().toString();
 
             if (val.isEmpty()) {
@@ -132,8 +130,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
         }
 
-        if(textFiled == provinceEditText)
-        {
+        if (textFiled == provinceEditText) {
             String val = provinceEditText.getText().toString();
 
             if (val.isEmpty()) {
@@ -147,8 +144,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
         }
 
-        if(textFiled == DistrictEditText)
-        {
+        if (textFiled == DistrictEditText) {
             String val = DistrictEditText.getText().toString();
 
             if (val.isEmpty()) {
@@ -162,8 +158,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
         }
 
-        if(textFiled == CityEditText)
-        {
+        if (textFiled == CityEditText) {
             String val = CityEditText.getText().toString();
 
             if (val.isEmpty()) {
@@ -181,81 +176,76 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
     }
 
 
-
-
     private void ConfirmOrder() {
 
 
-        // create varibale to get current date and time
-        final String saveCurrentTime, saveCurrentDate;
+            // create varibale to get current date and time
+            final String saveCurrentTime, saveCurrentDate;
 
-        // get  current time when adding to cart list the selected item
-        Calendar calForDate = Calendar.getInstance();
-        // Get current data
-        SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
-        // store current date in variable
-        saveCurrentDate = currentDate.format(calForDate.getTime());
-
-
-        // Get current time
-        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-        // store current time in variable
-        saveCurrentTime = currentDate.format(calForDate.getTime());
+            // get  current time when adding to cart list the selected item
+            Calendar calForDate = Calendar.getInstance();
+            // Get current data
+            SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+            // store current date in variable
+            saveCurrentDate = currentDate.format(calForDate.getTime());
 
 
-        final DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(userId);
+            // Get current time
+            SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+            // store current time in variable
+            saveCurrentTime = currentDate.format(calForDate.getTime());
+
+        if (valid) {
+            final DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(userId);
 
 
-        HashMap<String, Object> ordersMap = new HashMap<>();
-        //column na to the firebase
-        ordersMap.put("totalAmount", totalAmount);
-        ordersMap.put("name", nameEditText.getText().toString());
-        ordersMap.put("phone", phoneEditText.getText().toString());
-        ordersMap.put("date", saveCurrentDate);
-        ordersMap.put("time", saveCurrentTime);
-        ordersMap.put("address", addressEditText.getText().toString());
-        ordersMap.put("province", provinceEditText.getText().toString());
-        ordersMap.put("District", DistrictEditText.getText().toString());
-        ordersMap.put("City", CityEditText.getText().toString());
-        ordersMap.put("state", "pending");
+            HashMap<String, Object> ordersMap = new HashMap<>();
+            //column na to the firebase
+            ordersMap.put("totalAmount", totalAmount);
+            ordersMap.put("name", nameEditText.getText().toString());
+            ordersMap.put("phone", phoneEditText.getText().toString());
+            ordersMap.put("date", saveCurrentDate);
+            ordersMap.put("time", saveCurrentTime);
+            ordersMap.put("address", addressEditText.getText().toString());
+            ordersMap.put("province", provinceEditText.getText().toString());
+            ordersMap.put("District", DistrictEditText.getText().toString());
+            ordersMap.put("City", CityEditText.getText().toString());
+            ordersMap.put("state", "pending");
 
-        ordersRef.updateChildren(ordersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-
-
-            public void onComplete(@NonNull Task<Void> task) {
+            ordersRef.updateChildren(ordersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
 
 
+                public void onComplete(@NonNull Task<Void> task) {
 
 
-                if (task.isSuccessful()) {
-                    // remove the cart list after order confirm
-                    FirebaseDatabase.getInstance().getReference().child("Cart List").child("Cartlist User View").child(userId).child("products").removeValue()
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(ConfirmFinalOrderActivity.this, "order is placed successfully", Toast.LENGTH_SHORT).show();
+                    if (task.isSuccessful()) {
+                        // remove the cart list after order confirm
+                        FirebaseDatabase.getInstance().getReference().child("Cart List").child("Cartlist User View").child(userId).child("products").removeValue()
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(ConfirmFinalOrderActivity.this, "order is placed successfully", Toast.LENGTH_SHORT).show();
 
-                                        Intent intent = new Intent(ConfirmFinalOrderActivity.this, CartActivity.class);
-                                        // user can not go to back this activity
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                        startActivity(intent);
+                                            Intent intent = new Intent(ConfirmFinalOrderActivity.this, CartActivity.class);
+                                            // user can not go to back this activity
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            startActivity(intent);
 
-                                        finish();
+                                            finish();
 
+                                        }
                                     }
-                                }
-                            });
+                                });
+                    }
+
+
                 }
-
-
-            }
-        });
+            });
+        }
     }
-
-
-
-
-
 }
+
+
+

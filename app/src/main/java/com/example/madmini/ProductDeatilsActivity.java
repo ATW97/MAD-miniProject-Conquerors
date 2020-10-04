@@ -149,7 +149,7 @@ public class ProductDeatilsActivity extends AppCompatActivity {
                                             if(task.isSuccessful())
                                             {
 
-                                                Toast.makeText(ProductDeatilsActivity.this, "Product is added to cart", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(ProductDeatilsActivity.this, "Product is updated ", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(ProductDeatilsActivity.this,Cus1PetCategorySelect.class);
                                                 startActivity(intent);
                                             }
