@@ -73,12 +73,6 @@ public class AdminUserList extends AppCompatActivity {
                 holder.M1.setText(model.getMobile());
                 holder.E1.setText(model.getEmail());
 
-                holder.btn1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
             }
         };
         recyclerView.setHasFixedSize(true);
@@ -108,7 +102,7 @@ public class AdminUserList extends AppCompatActivity {
 
     private class UserViewModel extends RecyclerView.ViewHolder {
         TextView F1, L1, M1, E1;
-        Button btn1;
+
 
         public UserViewModel(@NonNull View itemView) {
             super(itemView);
@@ -116,7 +110,7 @@ public class AdminUserList extends AppCompatActivity {
             L1 = itemView.findViewById(R.id.txtLName);
             M1 = itemView.findViewById(R.id.txtMobile);
             E1 = itemView.findViewById(R.id.txtEmail);
-            btn1 = itemView.findViewById(R.id.btndeletelist);
+
 
         }
     }

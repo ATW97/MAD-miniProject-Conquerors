@@ -165,13 +165,13 @@ public class Registration extends AppCompatActivity {
                             userInfo.put("isUser", "1");
                             df.set(userInfo);
                             FirebaseAuth.getInstance().signOut();
-                            startActivity(new Intent(getApplicationContext(), Login.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Registration.this, "Failed to Create Account", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Registration.this, "Failed to Create Account", Toast.LENGTH_LONG).show();
                         }
                     });
                 }
@@ -225,13 +225,17 @@ public class Registration extends AppCompatActivity {
             return valid;
         } else if (textFiled == mobile) {
             String val = mobile.getText().toString();
+            String MobilePattern = "[0-9]{10}";
 
             if (val.isEmpty()) {
                 mobile.setError("Field cannot be empty");
                 valid = false;
-            } else if (val.charAt(0)=='0') {
-                mobile.setError("Enter the 10 digit numbers");
+            } else if (!val.matches(MobilePattern)) {
+                mobile.setError("Invalid 10 digit mobile no ");
                 valid = false;
+            } else if (val.length()<10) {
+                    mobile.setError("Invalid 10 digit no");
+                    valid = false;
             } else {
                 mobile.setError(null);
                 valid = true;
